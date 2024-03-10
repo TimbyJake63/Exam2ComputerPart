@@ -2,7 +2,7 @@
 # print back steps at the end
 
 ###############################################################################
-# TODO: 1. (5 pts)
+# DONE: 1. (5 pts)
 #
 #   In this module, we will be making a tool that allows a user to input the
 #   steps to a recipe. Once the user has entered all the steps, it will print
@@ -29,9 +29,12 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+def get_step(num):
+    step=input(f"Please enter the details for step {num}: ")
+    return(f"{num}) {step}.")
+#get_step(1)
 ###############################################################################
-# TODO: 2. (7 pts)
+# DONE: 2. (7 pts)
 #
 #   For this _TODO_, write a function called main() that will start everything
 #   off.
@@ -63,3 +66,18 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def get_step(num):
+    step=input(f"Please enter the details for step {num}: ")
+    return(f"{num}) {step}.")
+def main():
+        num =1
+        list=[] #Had Chat GPT show me how to create a list template to add things into during the while loop
+        while True:
+            step=get_step(num)
+            if "end" in step:
+                break
+            list.append(step)
+            num += 1
+        for step in list:
+            print(step)
+main()

@@ -2,7 +2,7 @@
 #   prints out a packing list for that vacation type
 
 ###############################################################################
-# TODO: 1. (5 pts)
+# DONE: 1. (5 pts)
 #
 #   For this module, we are going to create a vacation planner that will help
 #   the user plan what they need to bring on vacation.
@@ -28,9 +28,19 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+def starter_list(type):
+        match type:
+            case "beach":
+                return ["swimsuit", "towel", "sunscreen"]
+            case "fishing":
+                return ["rod", "bait", "cooler"]
+            case "cruise":
+                return "clothes", "passport", "I.D."
+            case _:
+                return []
+#print(starter_list("beach"))
 ###############################################################################
-# TODO: 2. (4 pts)
+# DONE: 2. (4 pts)
 #
 #   Now, perhaps the user would like to bring some of their own stuff that they
 #   specify.
@@ -48,9 +58,16 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+def gather_items():
+    list=[]
+    while True:
+        item=input("Please enter an item: ")
+        if item=="end":
+             break
+        list.append(item)
+    return(list)
 ###############################################################################
-# TODO: 3. (6 pts)
+# DONE: 3. (6 pts)
 #
 #   For this _TODO_, write a function called main() that will start things off.
 #
@@ -76,3 +93,16 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def main():
+     print("Hello!")
+     vacation=input("Enter a type of vacation! ")
+     list=starter_list(vacation)
+     for y in list:
+          print(y)
+     MoreItems=gather_items()
+     ultra_list=list + MoreItems
+     for x in ultra_list:
+          print(x)
+     print("Enjoy the vacation!")
+
+main()
