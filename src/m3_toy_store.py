@@ -114,3 +114,4 @@ def main():
         print(f"{toy}: ${price}")
     print(f"Total Cost: ${total}")
 main()
+#Used chat GPT to correct my for loop and also change the tupple to a list
